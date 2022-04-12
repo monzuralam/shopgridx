@@ -35,7 +35,7 @@ if( !function_exists('shopgridx_theme_setup') ){
         /**
          * Custom image size
          */
-        add_image_size('blog_thumb', 360, 360, true);
+        add_image_size('blog_thumb', 370, 215, true);
     
         // Title support
         add_theme_support( 'title-tag' );
