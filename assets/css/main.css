@@ -7511,7 +7511,7 @@ blockquote span {
 	Error 404 CSS
 ========================================*/
 .error-area {
-  height: 100vh;
+  height: 60vh;
   text-align: center;
   width: auto;
   margin-left: auto;
