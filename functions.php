@@ -77,3 +77,21 @@ if( !function_exists('shopgridx_theme_setup') ){
     }
     add_action('after_setup_theme','shopgridx_theme_setup');
 }
+
+if( !function_exists('shopgridx_assets') ){
+    function shopgridx_assets(){
+        wp_enqueue_style( 'LineIcons', get_theme_file_uri(). '/assets/css/LineIcons.3.0.css', array(), '1.0.0', 'all');
+        wp_enqueue_style( 'bootstrap', get_theme_file_uri(). '/assets/css/bootstrap.min.css', array(), '1.0.0', 'all');
+        wp_enqueue_style( 'editor-style', get_theme_file_uri(). '/assets/css/editor-style.css', array(), '1.0.0', 'all');
+        wp_enqueue_style( 'glightbox', get_theme_file_uri(). '/assets/css/glightbox.min.css', array(), '1.0.0', 'all');
+        wp_enqueue_style( 'tiny-slider', get_theme_file_uri(). '/assets/css/tiny-slider.css', array(), '1.0.0', 'all');
+        wp_enqueue_style( 'main', get_theme_file_uri(). '/assets/css/main.css', array(), '1.0.0', 'all');
+        wp_enqueue_style( 'style-name', get_stylesheet_uri() );
+    
+        wp_enqueue_script( 'bootstrap', get_theme_file_uri(). '/assets/js/bootstrap.min.js', array('jquery'), '1.0.0', 'all');
+        wp_enqueue_script( 'glightbox', get_theme_file_uri(). '/assets/js/glightbox.min.js', array('jquery'), '1.0.0', 'all');
+        wp_enqueue_script( 'tiny-slider', get_theme_file_uri(). '/assets/js/tiny-slider.js', array('jquery'), '1.0.0', 'all');
+        wp_enqueue_script( 'main', get_theme_file_uri(). '/assets/js/main.js', array('jquery'), '1.0.0', 'all');
+    }
+    add_action('wp_enqueue_scripts','shopgridx_assets');
+}
