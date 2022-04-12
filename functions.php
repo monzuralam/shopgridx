@@ -64,6 +64,8 @@ if( !function_exists('shopgridx_theme_setup') ){
         // register menu
         register_nav_menus(array(
             'primary_menu'  =>  __('Primary Menu','shopgridx'),
+            'category_menu'  =>  __('Category Menu','shopgridx'),
+            'top_menu'  =>  __('Top Menu','shopgridx'),
         ));    
         
         // load textdomain
