@@ -8,7 +8,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
     <!--[if lte IE 9]>
       <p class="browserupgrade">
         You are using an <strong>outdated</strong> browser. Please
@@ -352,3 +352,29 @@
         <!-- End Header Bottom -->
     </header>
     <!-- End Header Area -->
+    <?php 
+        if(!is_front_page()):
+    ?>
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="breadcrumbs-content">
+                        <span class="page-title"><?php the_title(); ?></span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <ul class="breadcrumb-nav">
+                        <li><a href="<?php echo esc_url(site_url()); ?>"><i class="lni lni-home"></i> <?php _e('Home', 'shopgridx'); ?></a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li>Blog Grid Sidebar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <?php 
+        endif;
+    ?>
