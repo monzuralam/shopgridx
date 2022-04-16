@@ -94,6 +94,10 @@ if( !function_exists('shopgridx_theme_setup') ){
         add_theme_support("wc-product-gallery-zoom");
         add_theme_support("wc-product-gallery-slider");
         add_theme_support("wc-product-gallery-lightbox");
+
+        if( !isset($content_width) ){
+            $content_width = 600;
+        }
     }
     add_action('after_setup_theme','shopgridx_theme_setup');
 }
