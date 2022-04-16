@@ -4,22 +4,19 @@ get_header();
     <!-- Start section area -->
     <section class="section">
         <div class="container">
-            <div class="contact-head">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-title">
-                            <h2><?php the_title(); ?></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <?php
-                            the_content();
-                        ?>
-                    </div>
-                </div>
-            </div>
+            <?php 
+            while(have_posts()):
+                the_post();
+                
+                get_template_part('template-parts/content','page');
+
+                // If comments are open or we have at least one comment, load up the comment template.
+                if ( comments_open() || get_comments_number() ) :
+                    comments_template();
+                endif;
+                
+            endwhile;
+            ?>
         </div>
     </section>
     <!--/ End section area  -->
