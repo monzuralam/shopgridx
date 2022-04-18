@@ -85,9 +85,9 @@ if( !function_exists('shopgridx_theme_setup') ){
                 'default_rows'      =>  10,
                 'min_rows'          =>  5,
                 'max_rows'          =>  10,
-                'default_columns'   =>  2,
-                'min_columns'       =>  2,
-                'max_columns'       =>  2
+                'default_columns'   =>  3,
+                'min_columns'       =>  3,
+                'max_columns'       =>  3
             )
         ));
 
