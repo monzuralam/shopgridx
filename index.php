@@ -53,7 +53,9 @@ get_header();
                     </div>
                     <!--/ End Pagination -->
                 </div>
-                <?php get_sidebar(); ?>
+                <div class="col-lg-4 col-md-12 col-12">
+                    <?php get_sidebar(); ?>
+                </div>
             </div>
         </div>
     </section>

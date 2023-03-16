@@ -1,4 +1,4 @@
-<aside class="col-lg-4 col-md-12 col-12">
+<aside class="">
     <div class="sidebar blog-grid-page">
         <!-- Start Single Widget -->
         <div class="widget search-widget">
