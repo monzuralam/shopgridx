@@ -119,3 +119,31 @@ if( !function_exists('shopgridx_assets') ){
     }
     add_action('wp_enqueue_scripts','shopgridx_assets');
 }
+
+/**
+ * Register sidebar.
+ */
+if( !function_exists('shopgridx_register_sidebar') ){
+    function shopgridx_register_sidebar() {
+        register_sidebar( array(
+            'name'          => __( 'Main Sidebar', 'shopgridx' ),
+            'id'            => 'sidebar',
+            'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'shopgridx' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h5 class="widget-title">',
+            'after_title'   => '</h5>',
+        ) );
+
+        register_sidebar( array(
+            'name'          => __( 'Shop Sidebar', 'shopgridx' ),
+            'id'            => 'shop-sidebar',
+            'description'   => __( 'Widgets in this area will be shown on shop, single product & archive product.', 'shopgridx' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h5 class="widget-title">',
+            'after_title'   => '</h5>',
+        ) );
+    }
+    add_action( 'widgets_init', 'shopgridx_register_sidebar' );
+}
