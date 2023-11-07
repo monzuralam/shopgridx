@@ -6054,6 +6054,16 @@ blockquote span {
   margin: 0;
 }
 
+.single-product .product-info .price del span bdi, 
+.single-product .product-info .price del span bdi span {
+  margin: 0;
+  color: #aaaaaa;
+  text-decoration: line-through;
+  font-weight: normal;
+  font-size: 14px;
+  display: inline-block;
+}
+
 /* Product Sidebar */
 .product-sidebar .single-widget {
   background-color: #fff;

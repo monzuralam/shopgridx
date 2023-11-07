@@ -30,7 +30,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		<div class="product-image">
 			<?php the_post_thumbnail(); ?>
 			<div class="button">
-				<a href="<?php echo $product->add_to_cart_url() ?>" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+				<a href="<?php echo $product->add_to_cart_url() ?>" class="btn"><i class="lni lni-cart"></i> <?php _e('Add to Cart', 'shopgridx'); ?></a>
 			</div>
 		</div>
 		<div class="product-info">
@@ -47,7 +47,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			<?php endif; ?>
 
 			<h4 class="title">
-				<a href="product-grids.html"><?php the_title(); ?></a>
+				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			</h4>
 			<ul class="review">
 				<li><i class="lni lni-star-filled"></i></li>
