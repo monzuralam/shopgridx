@@ -6063,6 +6063,38 @@ blockquote span {
   font-size: 14px;
   display: inline-block;
 }
+/* customize pagination of shop */
+nav.woocommerce-pagination.pagination{
+  text-align: left;
+}
+nav.woocommerce-pagination.pagination ul{
+  border: none;
+}
+nav.woocommerce-pagination.pagination ul li {
+  margin-right: 6px;
+  border: 0;
+  display: inline-block;
+}
+nav.woocommerce-pagination.pagination ul li:last-child {
+  margin-right: 0px;
+}
+nav.woocommerce-pagination.pagination ul li a, nav.woocommerce-pagination.pagination ul li span{
+  background: #fff;
+  color: #081828;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 8px 18px;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid #eee;
+  display: inline-block;
+}
+nav.woocommerce-pagination.pagination ul li span.current {
+  background: #0167F3;
+  color: #fff;
+  border-color: transparent;
+}
 
 /* Product Sidebar */
 .product-sidebar .single-widget {
