@@ -9,6 +9,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
     <!--[if lte IE 9]>
       <p class="browserupgrade">
         You are using an <strong>outdated</strong> browser. Please
