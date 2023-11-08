@@ -50,12 +50,19 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			</h4>
 			<ul class="review">
-				<li><i class="lni lni-star-filled"></i></li>
-				<li><i class="lni lni-star-filled"></i></li>
-				<li><i class="lni lni-star-filled"></i></li>
-				<li><i class="lni lni-star-filled"></i></li>
-				<li><i class="lni lni-star"></i></li>
-				<li><span>4.0 Review(s)</span></li>
+				<?php 
+					$average_rating = $product->average_rating;
+					for( $i = 1; $i<=5; $i++){
+						if( $i <= $average_rating ){ ?>
+							<li><i class="lni lni-star-filled"></i></li>
+							<?php
+						}else{ ?>
+							<li><i class="lni lni-star"></i></li>
+						<?php
+						}
+					}
+				?>
+				<li><span><?php echo sprintf('%1$s Review(s)', $product->review_count); ?> </span></li>
 			</ul>
 			<div class="price">
 				<?php
