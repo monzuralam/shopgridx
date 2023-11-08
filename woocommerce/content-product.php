@@ -30,7 +30,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		<div class="product-image">
 			<?php the_post_thumbnail(); ?>
 			<div class="button">
-				<a href="<?php echo $product->add_to_cart_url() ?>" class="btn"><i class="lni lni-cart"></i> <?php _e('Add to Cart', 'shopgridx'); ?></a>
+				<a href="<?php echo $product->add_to_cart_url() ?>" value="<?php echo esc_attr($product->id); ?>" data-product_id="<?php echo get_the_ID(); ?>" data-product_sku="<?php echo esc_attr($product->get_sku); ?>" class="btn ajax_add_to_cart add_to_cart_button"><i class="lni lni-cart"></i> <?php _e('Add to Cart', 'shopgridx'); ?></a>
 			</div>
 		</div>
 		<div class="product-info">
