@@ -2,7 +2,7 @@
 Template Name: shopgridx
 */
 
-(function () {
+(function ($) {
     //===== Prealoder
 
     window.onload = function () {
@@ -38,45 +38,49 @@ Template Name: shopgridx
     });
 
      //========= Hero Slider 
-     tns({
-        container: '.hero-slider',
-        slideBy: 'page',
-        autoplay: true,
-        autoplayButtonOutput: false,
-        mouseDrag: true,
-        gutter: 0,
-        items: 1,
-        nav: false,
-        controls: true,
-        controlsText: ['<i class="lni lni-chevron-left"></i>', '<i class="lni lni-chevron-right"></i>'],
-    });
+     if( $('.brands-logo-carousel').length > 0 ){
+        tns({
+            container: '.hero-slider',
+            slideBy: 'page',
+            autoplay: true,
+            autoplayButtonOutput: false,
+            mouseDrag: true,
+            gutter: 0,
+            items: 1,
+            nav: false,
+            controls: true,
+            controlsText: ['<i class="lni lni-chevron-left"></i>', '<i class="lni lni-chevron-right"></i>'],
+        });
+    }
 
     //======== Brand Slider
-    tns({
-        container: '.brands-logo-carousel',
-        autoplay: true,
-        autoplayButtonOutput: false,
-        mouseDrag: true,
-        gutter: 15,
-        nav: false,
-        controls: false,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            540: {
-                items: 3,
-            },
-            768: {
-                items: 5,
-            },
-            992: {
-                items: 6,
+    if( $('.brands-logo-carousel').length > 0 ){
+        tns({
+            container: '.brands-logo-carousel',
+            autoplay: true,
+            autoplayButtonOutput: false,
+            mouseDrag: true,
+            gutter: 15,
+            nav: false,
+            controls: false,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 3,
+                },
+                768: {
+                    items: 5,
+                },
+                992: {
+                    items: 6,
+                }
             }
-        }
-    });
+        });
+    }
 
-
+    /***
     const finaleDate = new Date("February 15, 2023 00:00:00").getTime();
 
         const timer = () => {
@@ -106,6 +110,21 @@ Template Name: shopgridx
         }
         timer();
         setInterval(timer, 1000);
+     */
 
+    if( $('#current').length > 0 ){
+        const current = document.getElementById("current");
+        const opacity = 0.6;
+        const imgs = document.querySelectorAll(".img");
+        imgs.forEach(img => {
+            img.addEventListener("click", (e) => {
+                imgs.forEach(img => {
+                    img.style.opacity = 1;
+                });
+                current.src = e.target.src;
+                e.target.style.opacity = opacity;
+            });
+        });
+    }
 
-})();
+})(jQuery);

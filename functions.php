@@ -212,3 +212,17 @@ function display_percentage_on_sale_badge($html, $post, $product) {
     return '<span class="sale-tag"> ' . esc_html($percentage) . '</span>';
 }
 add_filter('woocommerce_sale_flash', 'display_percentage_on_sale_badge', 20, 3);
+
+/**
+ * Single product image thumbnail
+ *
+ * @param string $html
+ * @param integer $attachment_id
+ * @return void
+ */
+function shopgridx_woocommerce_single_product_image_thumbnail_html($html, $attachment_id) {
+    $image_url = wp_get_attachment_url($attachment_id);
+    $html = '<img src="' . esc_url($image_url) . '" alt="' . esc_attr( get_the_title() ) . '" class="img" />';
+    return $html;
+}
+add_filter('woocommerce_single_product_image_thumbnail_html', 'shopgridx_woocommerce_single_product_image_thumbnail_html', 10, 2);
